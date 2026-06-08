@@ -70,19 +70,22 @@ export default function App() {
       </div>
 
       {/* Prime Customer Trust Banner: 수도권 내 200여 업체 정기 배관관리 중 */}
-      <div className="bg-gradient-to-r from-sky-500/10 via-cyan-500/5 to-transparent border-b border-sky-100 py-3">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
-          <div className="flex items-center space-x-2.5">
-            <span className="flex h-2.5 w-2.5 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-sky-500"></span>
+      <div className="bg-gradient-to-r from-sky-500/10 via-cyan-500/8 to-sky-100/40 border-b border-sky-100 py-5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-4 text-center lg:text-left">
+          <div className="flex items-center space-x-3 shrink-0">
+            <span className="flex h-3.5 w-3.5 relative">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-500 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-sky-600"></span>
             </span>
-            <span className="text-xs sm:text-sm font-extrabold text-slate-800">
-              🛡️ <span className="text-sky-600 font-sans tracking-tight">정기적 배관관리 전문업체</span> — 수도권 내 <span className="text-sky-700 bg-sky-100/80 px-1.5 py-0.5 rounded">200여 업체 관리 중</span>
-            </span>
+            <div className="text-sm sm:text-base font-extrabold text-slate-900">
+              🛡️ <span className="text-sky-600 font-sans tracking-tight">정기적 배관관리 전문업체</span>
+              <span className="mx-2 text-slate-300 font-normal">|</span> 
+              수도권 내 <span className="text-sky-800 bg-sky-100/85 px-2.5 py-1 rounded inline-block font-black">200여 업체 관리 중</span>
+            </div>
           </div>
-          <div className="text-[11px] sm:text-xs text-slate-500 font-medium font-sans">
-            정기 유지보수 협약 시 긴급 출동 최우선 배정 및 부품 교체 정밀 할인 우대 혜택 제공!
+          <div className="w-full lg:w-auto text-sm sm:text-base text-emerald-900 bg-emerald-50 border-2 border-emerald-350 px-4 py-3 rounded-2xl font-black font-sans shadow-md shadow-emerald-800/5 hover:scale-[1.01] transition-transform flex items-center justify-center space-x-2">
+            <span className="text-lg">💡</span>
+            <span>정기 유지보수 협약 시 긴급 출동 최우선 배정 및 부품 교체 정밀 할인 우대 혜택 제공!</span>
           </div>
         </div>
       </div>

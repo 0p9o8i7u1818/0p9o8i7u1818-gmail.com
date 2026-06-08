@@ -77,7 +77,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenConsult, phoneNumber, isAd
                 setIsAdmin(false);
                 alert("관리자 모드가 해제되었습니다.");
               } else {
-                const pw = prompt("드림배관설비 관리자 비밀번호를 입력해주세요.\n(비밀번호: 1164)");
+                const pw = prompt("드림배관설비 관리자 비밀번호를 입력해주세요.");
                 if (pw === "1164") {
                   setIsAdmin(true);
                   alert("관리자 모드가 활성화되어 하단 시공사례의 사진을 즉시 변경/수정하실 수 있습니다!");

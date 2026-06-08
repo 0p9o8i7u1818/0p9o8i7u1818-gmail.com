@@ -207,6 +207,11 @@ export const ConstructionBoard: React.FC<ConstructionBoardProps> = ({ isAdmin = 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
+    if (!isAdmin) {
+      alert("관리자 권한이 필요합니다. 관리자 모드를 먼저 활성화해주세요.");
+      return;
+    }
+    
     if (!formTitle || !formDescription || !formLocation) {
       alert("모든 필수 항목(제목, 시공설명, 위치)을 적어주세요.");
       return;
@@ -249,6 +254,10 @@ export const ConstructionBoard: React.FC<ConstructionBoardProps> = ({ isAdmin = 
   // Delete self-added cases if needed
   const handleDeleteCase = (id: string, e: React.MouseEvent) => {
     e.stopPropagation();
+    if (!isAdmin) {
+      alert("관리자 권한이 필요합니다. 관리자 모드를 먼저 활성화해주세요.");
+      return;
+    }
     if (confirm("정말로 이 시공 사례를 게시판에서 삭제하시겠습니까?")) {
       const updated = cases.filter(c => c.id !== id);
       saveCases(updated);
@@ -275,14 +284,16 @@ export const ConstructionBoard: React.FC<ConstructionBoardProps> = ({ isAdmin = 
             </p>
           </div>
 
-          <button
-            onClick={() => setShowAddModal(true)}
-            id="add-case-btn"
-            className="inline-flex items-center space-x-2 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm py-3 px-5 rounded-2xl transition shadow-lg shrink-0 self-start md:self-auto"
-          >
-            <PlusCircle className="w-4 h-4 text-emerald-400" />
-            <span>시공 사진 올리기 (시공등록)</span>
-          </button>
+          {isAdmin && (
+            <button
+              onClick={() => setShowAddModal(true)}
+              id="add-case-btn"
+              className="inline-flex items-center space-x-2 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm py-3 px-5 rounded-2xl transition shadow-lg shrink-0 self-start md:self-auto"
+            >
+              <PlusCircle className="w-4 h-4 text-emerald-400" />
+              <span>시공 사진 올리기 (시공등록)</span>
+            </button>
+          )}
         </div>
 
         {/* Categories Horizontal Scroller representing Filter */}
@@ -394,7 +405,7 @@ export const ConstructionBoard: React.FC<ConstructionBoardProps> = ({ isAdmin = 
                       </div>
 
                       {/* Delete option for custom posts */}
-                      {cs.id.startsWith("case-user-") && (
+                      {isAdmin && cs.id.startsWith("case-user-") && (
                         <button
                           onClick={(e) => handleDeleteCase(cs.id, e)}
                           className="text-[10px] font-bold text-red-500 hover:text-red-700 whitespace-nowrap pl-2"
