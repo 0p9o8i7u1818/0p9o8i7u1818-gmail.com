@@ -1,0 +1,6 @@
+{
+  "name": "드림배관설비",
+  "description": "배관 막힘, 배관관리, 고압세척, 펌프교환, 수전교체 전문 드림배관설비 신속출장 서비스",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
